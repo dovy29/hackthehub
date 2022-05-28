@@ -16,6 +16,7 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
 	public String data() {
-		return "index.html";
+		return null;
+
     }
 }

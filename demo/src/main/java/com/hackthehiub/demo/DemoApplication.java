@@ -1,5 +1,8 @@
 package com.hackthehiub.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +10,8 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.rekognition.RekognitionClient;
 import software.amazon.awssdk.services.rekognition.model.GetLabelDetectionRequest;
 import software.amazon.awssdk.services.rekognition.model.GetLabelDetectionResponse;
+import software.amazon.awssdk.services.rekognition.model.Label;
+import software.amazon.awssdk.services.rekognition.model.LabelDetection;
 import software.amazon.awssdk.services.rekognition.model.RekognitionException;
 import software.amazon.awssdk.services.rekognition.model.S3Object;
 import software.amazon.awssdk.services.rekognition.model.StartLabelDetectionRequest;
@@ -18,7 +23,6 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-
 		try {
 			Region region = Region.US_WEST_2; // Ireland
 			RekognitionClient rekClient = RekognitionClient.builder().region(region).build();
@@ -43,18 +47,28 @@ public class DemoApplication {
 			while (ans) {
 
 				GetLabelDetectionRequest detectionRequest = GetLabelDetectionRequest.builder().jobId(startJobId)
-						.maxResults(10).build();
+						.build();
 
 				GetLabelDetectionResponse result = rekClient.getLabelDetection(detectionRequest);
 				status = result.jobStatusAsString();
 
-				if (status.compareTo("SUCCEEDED") == 0)
+				if (status.compareTo("SUCCEEDED") == 0) {
 					ans = false;
-				else
+
+					List<LabelDetection> numberPlate = new ArrayList<LabelDetection>();
+					for (LabelDetection detection : result.labels()) {
+						Label label = detection.label();
+						if (label.name().equals("License Plate")) {
+							numberPlate.add(detection);
+						}
+					}
+					result.labels();
+				} else {
 					System.out.println(yy + " status is: " + status);
 
-				Thread.sleep(1000);
-				yy++;
+					Thread.sleep(1000);
+					yy++;
+				}
 			}
 
 			System.out.println(startJobId + " status is: " + status);
@@ -63,7 +77,6 @@ public class DemoApplication {
 			e.getMessage();
 			System.exit(1);
 		}
-
 	}
 
 }
