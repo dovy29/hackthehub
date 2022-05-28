@@ -6,18 +6,26 @@ import java.util.List;
 public class Response {
 	
 	private List<Car> carlist = new ArrayList<Car>();
+	private List<String> evidenceImageList = new ArrayList<String>();
+	private String evidenceVideo = "https://hackthehub-crash-videos.s3.us-west-2.amazonaws.com/2022-05-28_11-35-59.mp4";
+	
 	public List<Car> getCarlist() {
 		return carlist;
 	}
 	public void setCarlist(List<Car> carlist) {
 		this.carlist = carlist;
 	}
-	public String getEvidenceImage() {
-		return evidenceImage;
+	public List<String> getEvidenceImageList() {
+		return evidenceImageList;
 	}
-	public void setEvidenceImage(String evidenceImage) {
-		this.evidenceImage = evidenceImage;
+	public void setEvidenceImageList(List<String> evidenceImageList) {
+		this.evidenceImageList = evidenceImageList;
 	}
-	private String evidenceImage = "https://hackthehub-crash-videos.s3.us-west-2.amazonaws.com/license+plate.png";
+	public String getEvidenceVideo() {
+		return evidenceVideo;
+	}
+	public void setEvidenceVideo(String evidenceVideo) {
+		this.evidenceVideo = evidenceVideo;
+	}
 
 }
