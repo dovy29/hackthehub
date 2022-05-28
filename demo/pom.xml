@@ -46,6 +46,20 @@
 			<version>2.17.197</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-rekognition -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-rekognition</artifactId>
+			<version>1.12.228</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.12.228</version>
+		</dependency>
+
 
 	</dependencies>
 
