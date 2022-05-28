@@ -11,7 +11,7 @@ public class Car {
 	}
 
 	private String json = "{"
-	+ "\"registrationNumber\": \"WN67DSO\","
+	+ "\"registrationNumber\": \"AU11RKO\","
 	+ "\"taxStatus\": \"Untaxed\","
 	+ "\"taxDueDate\": \"2017-12-25\","
 	+ "\"artEndDate\": \"2007-12-25\","
@@ -27,8 +27,8 @@ public class Car {
 	+ "\"markedForExport\": true,"
 	+ "\"colour\": \"Grey\","
 	+ "\"typeApproval\": \"N1\","
-	+ "\"wheelplan\": \"NON STANDARD\","
-	+ "\"revenueWeight\": 1640,"
+	+ "\"wheelplan\": \"2 AXLE RIGID BODY\","
+	+ "\"revenueWeight\": 1820,"
 	+ "\"realDrivingEmissions\": \"1\","
 	+ "\"dateOfLastV5CIssued\": \"2016-12-25\","
 	+ "\"euroStatus\": \"Euro 5\""

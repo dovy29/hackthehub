@@ -33,7 +33,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 		try {
-			Region region = Region.US_WEST_2; // Ireland
+			/*Region region = Region.US_WEST_2; // Ireland
 			//RekognitionClient rekClient = RekognitionClient.builder().region(region).build();
 			//RekognitionClient rekClient = RekognitionClient.builder().region(region).build();
 			AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion("us-west-2").build();
