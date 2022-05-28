@@ -11,20 +11,12 @@ function Navigation() {
                     <p>Home</p>
                 </li>
                 <li>
-                    <Link to={'/events'}><i className="fas fa-calendar"></i></Link>
+                    <Link to={'/eventdetails'}><i className="fas fa-car-crash"></i></Link>
                     <p>Events</p>
                 </li>
                 <li>
-                    <Link to={'/footage'}><i className="fas fa-video"></i></Link>
-                    <p>Video</p>
-                </li>
-                <li>
-                    <Link to={'/eventdetails'}><i className="fas fa-video"></i></Link>
-                    <p>Network</p>
-                </li>
-                <li>
-                    <Link to={'/footage'}><i className="fas fa-video"></i></Link>
-                    <p>Settings</p>
+                    <Link to={'/vehicledetails'}><i class="fas fa-car"></i></Link>
+                    <p>Vehicle details</p>
                 </li>
             </ul>
         </nav>
